@@ -85,11 +85,11 @@
             noButton.addEventListener("click", function() {
                 if (count < noResponses.length) {
                     noButton.innerText = noResponses[count];
-                    gifContainer.innerHTML = <img src="${gifs[count]}" alt="Reaction gif">;
+                    gifContainer.innerHTML = `<img src="${gifs[count]}" alt="Reaction gif">`;
                     count++;
                 } else {
                     noButton.innerText = "Just say yes! 😭";
-                    gifContainer.innerHTML = <img src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216" alt="Begging gif">;
+                    gifContainer.innerHTML = `<img src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216" alt="Begging gif">`;
                 }
             });
  
