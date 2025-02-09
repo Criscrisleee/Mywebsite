@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            margin-top: 100px;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        h1 {
+            color: #ff3366;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .yes {
+            background-color: #ff3366;
+            color: white;
+        }
+        .no {
+            background-color: #cccccc;
+            color: black;
+        }
+        .gif-container {
+            margin-top: 20px;
+        }
+        img {
+            width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Will you be my Valentine? 💖</h1>
+        <div class="buttons">
+            <button class="yes">Yes</button>
+            <button class="no">No</button>
+        </div>
+        <div class="gif-container" id="gif-container"></div>
+    </div>
+ 
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let noResponses = [
+                "Are you sure? 😢",
+                "Really sure? 💔",
+                "Think again... 😞",
+                "Last chance! 🥺",
+                "Come on, say yes! 💕"
+            ];
+            let gifs = [
+                "https://i.gifer.com/XZ9.gif",
+                "https://media.tenor.com/iSzEkQ119HMAAAAC/sad-crying.gif",
+                "https://media.giphy.com/media/13wRu1xRTswrcc/giphy.gif",
+                "https://gifdb.com/images/high/funny-crying-japanese-overflowing-tears-3cmkbajmidy02b00.gif",
+                "https://media0.giphy.com/media/ZEgBHVeRlmTqjCPlqx/giphy.gif"
+            ];
+            let count = 0;
+ 
+            const noButton = document.querySelector(".no");
+            const yesButton = document.querySelector(".yes");
+            const gifContainer = document.getElementById("gif-container");
+ 
+            noButton.addEventListener("click", function() {
+                if (count < noResponses.length) {
+                    noButton.innerText = noResponses[count];
+                    gifContainer.innerHTML = <img src="${gifs[count]}" alt="Reaction gif">;
+                    count++;
+                } else {
+                    noButton.innerText = "Just say yes! 😭";
+                    gifContainer.innerHTML = <img src="https://media1.tenor.com/images/9413ffc5a11722a3cc456a88810750bd/tenor.gif?itemid=14193216" alt="Begging gif">;
+                }
+            });
+ 
+            yesButton.addEventListener("click", function() {
+                document.body.innerHTML = '<h1 style="color: #ff3366;">Yay! Can\'t wait for our Valentine\'s date! ❤️</h1>' +
+                    '<div style="margin-top:20px;"><img src="https://gifdb.com/images/high/yay-milk-and-mocha-bears-cheering-confetti-9rjvz35rjxvj7oup.gif" alt="Happy gif"></div>';
+            });
+        });
+    </script>
+</body>
+</html>
